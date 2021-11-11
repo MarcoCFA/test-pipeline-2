@@ -1,9 +1,0 @@
-test
-jlkjfda
-fadjfljadskfjl jjldkjaflkdaj
-jkjd
-
-jdlkajfd;lkj
-
-ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit
-ln -s -f ../../hooks/pre-push .git/hooks/pre-push
