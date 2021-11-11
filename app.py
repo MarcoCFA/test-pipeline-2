@@ -5,7 +5,7 @@ import aws_cdk as cdk
 from pipeline import Pipeline
 from deployment import DeploymentStage
 
-from test_pipeline_2.test_pipeline_2_stack import TestPipeline2Stack
+#from test_pipeline_2.test_pipeline_2_stack import TestPipeline2Stack
 
 APP_ENV = cdk.Environment(account="225342792054", region="us-east-1")
 
