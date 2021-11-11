@@ -1,6 +1,7 @@
 # AWS CDK
 .cdk.staging
-cdk.out/
+!cdk.out/
+cdk.out/*
 !cdk.out/cdk.out
 
 
