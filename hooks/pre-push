@@ -2,4 +2,8 @@
 
 echo "Calling pre-push.sh"
 
-#./scripts/pre-commit.sh
+./scripts/pre-push.sh
+
+echo "Calling run_tests.sh"
+
+./scripts/run_tests.sh
