@@ -21,6 +21,7 @@ setuptools.setup(
     install_requires=[
         "aws-cdk-lib==2.0.0-rc.21",
         "constructs>=10.0.0,<11.0.0",
+        "aws-cdk.assertions"
     ],
 
     python_requires=">=3.6",
