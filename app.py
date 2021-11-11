@@ -13,7 +13,7 @@ PIPELINE_ENV = cdk.Environment(account="225342792054", region="us-east-2")
 
 app = cdk.App()
 
-TestPipeline2Stack(app, "TestPipeline2Stack", env=APP_ENV)
+#TestPipeline2Stack(app, "TestPipeline2Stack", env=APP_ENV)
 
 DeploymentStage(app, "TestPipelineStack2", env=APP_ENV)
 

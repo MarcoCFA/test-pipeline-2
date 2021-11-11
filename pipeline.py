@@ -23,7 +23,7 @@ class Pipeline(Stack):
         pipeline = pipelines.CodePipeline(self, "GitHubPipeline2", pipeline_name="github-pipeline-2",
                                           cross_account_keys=False, synth=synth_step)
 
-        stage = Deployment(self, "DeployStack")
+        stage = DeploymentStage(self, "DeployStack")
 
         pipeline.add_stage(stage, pre=[pipelines.ConfirmPermissionsBroadening("Check", stage=stage)])
         # , pipelines.ManualApprovalStep("Approve Security Changes")])
