@@ -3,7 +3,6 @@ import os
 
 import aws_cdk as cdk
 
-
 from test_pipeline_2.test_pipeline_2_stack import TestPipeline2Stack
 
 
