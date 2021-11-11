@@ -2,4 +2,9 @@
 
 echo "Call run_tests.sh"
 
-cdk synth
+if cdk synth; then
+    printf 'cdk synth succeeded\n'
+else
+    printf 'cdk synth failed\n'
+fi
+
