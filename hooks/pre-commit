@@ -1,5 +1,5 @@
 #!/bin/sh
 
-echo "Calling pre-push.sh"
+echo "Calling pre-commit.sh"
 
 #./scripts/pre-commit.sh
