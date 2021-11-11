@@ -2,4 +2,4 @@
 
 echo "Calling pre-push.sh"
 
-./scripts/pre-commit.sh
+#./scripts/pre-commit.sh
