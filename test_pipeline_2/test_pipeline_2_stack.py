@@ -8,7 +8,7 @@ class TestPipeline2Stack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        bucket_name = "my-test-bucket"
+        bucket_name = "my-test-bucket-1981-2021"
         self.bucket = s3.Bucket(self, "test-bucket", bucket_name=bucket_name)
 
 
