@@ -3,3 +3,4 @@ jlkjfda
 fadjfljadskfjl jjldkjaflkdaj
 jkjd
 
+ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit
