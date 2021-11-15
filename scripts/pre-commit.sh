@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting pre-commit.sh"
+echo "Running pre-commit.sh"
 
 echo_failed_tests () {
   echo "Tests must pass before commit."
@@ -18,3 +18,6 @@ black .
 popd || return 1
 
 # Test 1
+
+
+echo "Exiting pre-commit.sh"
