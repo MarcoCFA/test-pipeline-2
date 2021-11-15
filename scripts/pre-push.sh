@@ -9,7 +9,7 @@ echo_failed_tests () {
 }
 
 echo "Running cdk synth"
-cdk synth -o
+cdk synth --output
 status=$?
 if [ $status -ne 0 ]; then
   echo_failed_tests
