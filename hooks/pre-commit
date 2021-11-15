@@ -1,5 +1,7 @@
 #!/bin/sh
 
-echo "Calling pre-commit.sh"
+echo "Calling pre-commit hook"
 
 ./scripts/pre-commit.sh
+
+echo "Exiting pre-commit hook"

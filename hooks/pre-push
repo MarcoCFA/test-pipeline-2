@@ -1,9 +1,11 @@
 #!/bin/sh
 
-echo "Calling pre-push.sh"
+echo "Calling pre-push hook"
 
 ./scripts/pre-push.sh
 
 echo "Calling run_tests.sh"
 
 ./scripts/run_tests.sh
+
+echo "Exiting pre-push hook"
