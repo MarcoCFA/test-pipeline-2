@@ -4,19 +4,37 @@
 #
 #    pip-compile
 #
+black==21.10b0
+    # via -r requirements.in
+click==8.0.3
+    # via black
 flake8==4.0.1
+    # via -r requirements.in
+isort==5.10.1
     # via -r requirements.in
 mccabe==0.6.1
     # via flake8
 mypy==0.910
     # via -r requirements.in
 mypy-extensions==0.4.3
-    # via mypy
+    # via
+    #   black
+    #   mypy
+pathspec==0.9.0
+    # via black
+platformdirs==2.4.0
+    # via black
 pycodestyle==2.8.0
     # via flake8
 pyflakes==2.4.0
     # via flake8
+regex==2021.11.10
+    # via black
 toml==0.10.2
     # via mypy
+tomli==1.2.2
+    # via black
 typing-extensions==4.0.0
-    # via mypy
+    # via
+    #   black
+    #   mypy

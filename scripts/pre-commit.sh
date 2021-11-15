@@ -7,6 +7,12 @@ echo_failed_tests () {
   exit 1
 }
 
+echo "Running iSort"
+isort .
+status=$?
+if [ $status -ne 0 ]; then
+  echo_failed_tests
+fi
 
 echo "Running black formatting"
 # 1 - Go to the git root directory using pushd to navigate the directory stack
@@ -30,6 +36,7 @@ fi
 # if [ $status -ne 0 ]; then
   # echo_failed_tests
 # fi
+
 
 
 echo "Exiting pre-commit.sh"
