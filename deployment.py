@@ -9,4 +9,6 @@ class DeploymentStage(Stage):
 
         deploy_stack = Stack(self, "deployStack")
 
-        my_test_bucket = TestS3BucketConstruct(deploy_stack, "my-test-bucket")
+        my_test_bucket = TestS3BucketConstruct(
+            deploy_stack, "my-test-bucket"
+        )

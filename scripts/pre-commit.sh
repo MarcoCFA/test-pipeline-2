@@ -18,6 +18,10 @@ black .
 popd || return 1
 
 echo "Running flake8 linter"
-
+flake8 .
+status=$?
+if [ $status -ne 0 ]; then
+  echo_failed_tests
+fi
 
 echo "Exiting pre-commit.sh"
