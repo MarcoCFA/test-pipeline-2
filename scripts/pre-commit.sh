@@ -8,7 +8,7 @@ echo_failed_tests () {
 }
 
 
-echo "Running black formatting test"
+echo "Running black formatting"
 # 1 - Go to the git root directory using pushd to navigate the directory stack
 # 2 - Run black formatting on root directory
 # 3 - Remove the root directory from the directory stack
@@ -17,7 +17,7 @@ pushd "$(git rev-parse --show-toplevel)" || return 1
 black .
 popd || return 1
 
-# Test 1
+echo "Running flake8 linter"
 
 
 echo "Exiting pre-commit.sh"
