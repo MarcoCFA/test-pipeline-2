@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import aws_cdk as cdk
-from pipeline import Pipeline
+
 from deployment import DeploymentStage
+from pipeline import Pipeline
 
 # from test_pipeline_2.test_pipeline_2_stack import TestPipeline2Stack
 

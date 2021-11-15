@@ -1,7 +1,7 @@
-from deployment import DeploymentStage
-from aws_cdk import Stack
+from aws_cdk import Stack, pipelines
 from constructs import Construct
-from aws_cdk import pipelines
+
+from deployment import DeploymentStage
 
 
 class Pipeline(Stack):
