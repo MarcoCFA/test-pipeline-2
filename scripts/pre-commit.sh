@@ -17,3 +17,4 @@ pushd "$(git rev-parse --show-toplevel)" || return 1
 black .
 popd || return 1
 
+# Test
