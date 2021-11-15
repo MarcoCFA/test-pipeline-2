@@ -9,21 +9,31 @@ class Pipeline(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # Source
-        github_repo = pipelines.CodePipelineSource.connection("MarcoCFA/test-pipeline-2", "master",
-                                                              connection_arn="arn:aws:codestar-connections:us-east-1:225342792054:connection/0d952b85-4245-42bc-8619-a03128f24aa9")
+        github_repo = pipelines.CodePipelineSource.connection(
+            "MarcoCFA/test-pipeline-2",
+            "master",
+            connection_arn="arn:aws:codestar-connections:us-east-1:225342792054:connection/0d952b85-4245-42bc-8619-a03128f24aa9",
+        )
 
         synth_step = pipelines.CodeBuildStep(
             "Synth",
             input=github_repo,
             install_commands=["./scripts/installs.sh"],
             commands=["npx cdk synth"],
-            primary_output_directory="cdk.out"
+            primary_output_directory="cdk.out",
         )
 
-        pipeline = pipelines.CodePipeline(self, "GitHubPipeline2", pipeline_name="github-pipeline-2",
-                                          cross_account_keys=False, synth=synth_step)
+        pipeline = pipelines.CodePipeline(
+            self,
+            "GitHubPipeline2",
+            pipeline_name="github-pipeline-2",
+            cross_account_keys=False,
+            synth=synth_step,
+        )
 
         stage = DeploymentStage(self, "DeployStack")
 
-        pipeline.add_stage(stage, pre=[pipelines.ConfirmPermissionsBroadening("Check", stage=stage)])
+        pipeline.add_stage(
+            stage, pre=[pipelines.ConfirmPermissionsBroadening("Check", stage=stage)]
+        )
         # , pipelines.ManualApprovalStep("Approve Security Changes")])
