@@ -24,4 +24,12 @@ if [ $status -ne 0 ]; then
   echo_failed_tests
 fi
 
+# echo "Running mypy static linter"
+# mypy .
+# status=$?
+# if [ $status -ne 0 ]; then
+  # echo_failed_tests
+# fi
+
+
 echo "Exiting pre-commit.sh"

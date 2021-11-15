@@ -4,7 +4,7 @@ from aws_service_construct.infrastructure import TestS3BucketConstruct
 
 
 class DeploymentStage(Stage):
-    def __init__(self, scope: Construct, construct_id: str, **kwargs):
+    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
         deploy_stack = Stack(self, "deployStack")
