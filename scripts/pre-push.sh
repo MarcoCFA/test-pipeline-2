@@ -15,7 +15,7 @@ if [ $status -ne 0 ]; then
   echo_failed_tests
 fi
 
-echo "Running bandit scan"
+echo "Running bandit scan-1"
 bandit -r . -x env
 status=$?
 if [ $status -ne 0 ]; then
