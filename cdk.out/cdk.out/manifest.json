@@ -1,0 +1,229 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "assembly-TestPipelineStack2": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-TestPipelineStack2",
+        "displayName": "TestPipelineStack2"
+      }
+    },
+    "assembly-GitHubPipeline2-DeployStack": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-GitHubPipeline2-DeployStack",
+        "displayName": "GitHubPipeline2/DeployStack"
+      }
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "GitHubPipeline2.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "GitHubPipeline2.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "GitHubPipeline2": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://225342792054/us-east-2",
+      "properties": {
+        "templateFile": "GitHubPipeline2.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::225342792054:role/cdk-hnb659fds-deploy-role-225342792054-us-east-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::225342792054:role/cdk-hnb659fds-cfn-exec-role-225342792054-us-east-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-225342792054-us-east-2/d4340c94cb89af347f71ce0f3a8d92f0f40f30f3fddbce696e2f0a34139c5f76.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "GitHubPipeline2.assets"
+        ]
+      },
+      "dependencies": [
+        "GitHubPipeline2.assets"
+      ],
+      "metadata": {
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineArtifactsBucket62A4D2AD"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineArtifactsBucketPolicy3CC6DA69"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineRole29BA0088"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineRoleDefaultPolicy25D3FF23"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineC14A5F78"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Source/MarcoCFA_test-pipeline-2/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineSourceMarcoCFAtestpipeline2CodePipelineActionRole380C5491"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Source/MarcoCFA_test-pipeline-2/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineSourceMarcoCFAtestpipeline2CodePipelineActionRoleDefaultPolicy55EF855C"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Build/Synth/CdkBuildProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineBuildSynthCdkBuildProjectRoleCBA7B966"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineBuildSynthCdkBuildProjectRoleDefaultPolicyBFF5BA4B"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Build/Synth/CdkBuildProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineBuildSynthCdkBuildProjectBA38C190"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Build/Synth/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineBuildSynthCodePipelineActionRole54343DC6"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/Build/Synth/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineBuildSynthCodePipelineActionRoleDefaultPolicy8C0606EE"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineUpdatePipelineSelfMutateCodePipelineActionRole5590503B"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/UpdatePipeline/SelfMutate/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineUpdatePipelineSelfMutateCodePipelineActionRoleDefaultPolicy37D56D59"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/DeployStack/Check.Check/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineDeployStackCheckCheckCodePipelineActionRoleA5ADD7B6"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/DeployStack/Check.Check/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineDeployStackCheckCheckCodePipelineActionRoleDefaultPolicyADBFFC73"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/Pipeline/DeployStack/Check.Confirm/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelineDeployStackCheckConfirmCodePipelineActionRole705E7432"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/UpdatePipeline/SelfMutation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2UpdatePipelineSelfMutationRole18A1C252"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2UpdatePipelineSelfMutationRoleDefaultPolicyB3B76534"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/UpdatePipeline/SelfMutation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2UpdatePipelineSelfMutation5CAE5DB0"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/PipelinesSecurityCheck/CDKPipelinesAutoApprove/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelinesSecurityCheckCDKPipelinesAutoApproveServiceRole5E1973EF"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/PipelinesSecurityCheck/CDKPipelinesAutoApprove/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelinesSecurityCheckCDKPipelinesAutoApproveServiceRoleDefaultPolicy4D7F136F"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/PipelinesSecurityCheck/CDKPipelinesAutoApprove/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelinesSecurityCheckCDKPipelinesAutoApprove9341DBAF"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/PipelinesSecurityCheck/CDKSecurityCheck/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelinesSecurityCheckCDKSecurityCheckRole46BC74F0"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/PipelinesSecurityCheck/CDKSecurityCheck/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelinesSecurityCheckCDKSecurityCheckRoleDefaultPolicy51801A1E"
+          }
+        ],
+        "/GitHubPipeline2/GitHubPipeline2/PipelinesSecurityCheck/CDKSecurityCheck/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitHubPipeline2PipelinesSecurityCheckCDKSecurityCheck91D54BFC"
+          }
+        ],
+        "/GitHubPipeline2/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/GitHubPipeline2/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/GitHubPipeline2/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "GitHubPipeline2"
+    }
+  }
+}

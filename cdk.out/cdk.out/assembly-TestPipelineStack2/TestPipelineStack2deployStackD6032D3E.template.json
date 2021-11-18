@@ -1,0 +1,58 @@
+{
+  "Resources": {
+    "mytestbucket3F2555AC": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": "my-test-bucket-1981-2021"
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "TestPipelineStack2/deployStack/my-test-bucket/test-bucket/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSM9Az0C1K1jMyVEwsL9ZNTsnWzclM0qsOLklMztYBCsUXG+tVO5UmZ6eW6Din5UFYtSBmUGpxfmlRcmqtTkBlSUZ+nr6xnqWeuWJWcWamblFpXklmbqpeEIQGAMdGNwlnAAAA"
+      },
+      "Metadata": {
+        "aws:cdk:path": "TestPipelineStack2/deployStack/CDKMetadata/Default"
+      }
+    }
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store."
+    }
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ],
+                  {
+                    "Ref": "BootstrapVersion"
+                  }
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+        }
+      ]
+    }
+  }
+}

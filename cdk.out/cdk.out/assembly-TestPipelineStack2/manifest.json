@@ -1,0 +1,60 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "TestPipelineStack2deployStackD6032D3E.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "TestPipelineStack2deployStackD6032D3E.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "TestPipelineStack2deployStackD6032D3E": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://225342792054/us-east-1",
+      "properties": {
+        "templateFile": "TestPipelineStack2deployStackD6032D3E.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::225342792054:role/cdk-hnb659fds-deploy-role-225342792054-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::225342792054:role/cdk-hnb659fds-cfn-exec-role-225342792054-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-225342792054-us-east-1/6c2f66363834a5e53e620eff8ca0aaa6b29adf607324640404cef86597174dc1.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "TestPipelineStack2deployStackD6032D3E.assets"
+        ],
+        "stackName": "TestPipelineStack2-deployStack"
+      },
+      "dependencies": [
+        "TestPipelineStack2deployStackD6032D3E.assets"
+      ],
+      "metadata": {
+        "/TestPipelineStack2/deployStack/my-test-bucket/test-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mytestbucket3F2555AC"
+          }
+        ],
+        "/TestPipelineStack2/deployStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/TestPipelineStack2/deployStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/TestPipelineStack2/deployStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "TestPipelineStack2/deployStack"
+    }
+  }
+}

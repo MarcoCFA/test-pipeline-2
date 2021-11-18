@@ -1,0 +1,66 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "GitHubPipeline2DeployStackdeployStackB5C35B7C.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "GitHubPipeline2DeployStackdeployStackB5C35B7C.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "GitHubPipeline2DeployStackdeployStackB5C35B7C": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "GitHubPipeline2DeployStackdeployStackB5C35B7C.template.json",
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/230cc838631c79b75c728734175f1d8daa33421265dc8db624f9f0f593195925.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "GitHubPipeline2DeployStackdeployStackB5C35B7C.assets"
+        ],
+        "stackName": "DeployStack-deployStack"
+      },
+      "dependencies": [
+        "GitHubPipeline2DeployStackdeployStackB5C35B7C.assets"
+      ],
+      "metadata": {
+        "/GitHubPipeline2/DeployStack/deployStack/my-test-bucket/test-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mytestbucket3F2555AC"
+          }
+        ],
+        "/GitHubPipeline2/DeployStack/deployStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/GitHubPipeline2/DeployStack/deployStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/GitHubPipeline2/DeployStack/deployStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/GitHubPipeline2/DeployStack/deployStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "GitHubPipeline2/DeployStack/deployStack"
+    }
+  }
+}
